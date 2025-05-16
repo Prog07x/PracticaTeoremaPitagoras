@@ -29,7 +29,10 @@ public class TrianguloRectangulo {
 	 * @return double
 	 */
 	public double area() {
-		return (this.a*this.b)/2;
+		// aqui meto esta variable porque al ser a y b enteros si lo hacia
+		// directamente el resultado del debug me lo hacia int.
+		double area = this.a*this.b;
+		return (area)/2;
 	}
 	
 	/****
