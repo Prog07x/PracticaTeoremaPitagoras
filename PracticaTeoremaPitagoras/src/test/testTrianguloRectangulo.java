@@ -24,21 +24,46 @@ class testTrianguloRectangulo {
 
 	@Test
 	void testArea() {
-		assertEquals(0.5, t2.area());
 		assertEquals(6, t1.area());
 		
+	}
+	
+	@Test
+	void testAreadefault() {
+		assertEquals(0.5, t2.area());
 	}
 
 	@Test
 	void testHipotenusa() {
-		assertEquals(1.4142135623730951, t2.getC());
 		assertEquals(5, t1.getC());
+	}
+	
+	@Test
+	void testHipotenusadefault() {
+		assertEquals(1.4142135623730951, t2.getC());
 	}
 
 	@Test
 	void testPerimetro() {
-		assertEquals(3.414213562373095, t2.perimetro());
 		assertEquals(12, t1.perimetro());
 	}
+	
+	@Test
+	void testPerimetrodefault() {
+		assertEquals(3.414213562373095, t2.perimetro());
+	}
+	
+	@Test
+	void testExcepcion() {
+		assertThrows(IllegalArgumentException.class, () -> {
+			TrianguloRectangulo m2 = new TrianguloRectangulo(-1,3);
+		});
+		
+		assertThrows(IllegalArgumentException.class, () -> {
+			TrianguloRectangulo m1 = new TrianguloRectangulo(1,-3);
+		});
+	}
+
+	
 
 }
